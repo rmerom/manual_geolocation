@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Manual GeoLocation popup</title>
+    <style>
+      body {
+      font-family: arial, sans-serif;
+      background-color: #ffc;
+      }
+    </style>
+   <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=geometry,places"></script>
+   <script type="text/javascript"
+    src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+   <script src="popup2.js"></script>
+  </head>
+  <body onload="initialize();" onunload='notifyChange()'>
+    <h1 style='font-size: medium'>Manual GeoLocation</h1>
+    <a id='toggle' onclick='toggle();' href='javascript:void(0)'><span id='toggleSpan'>disable</span></a>
+    <br/> <br/>
+    <span style='font-size: small'>Drag the marker, double click on the desired location, or type address below</span><br/>
+    <div id='map_canvas' style='width: 400px; height: 400px;'></div>
+    <div style='margin-top: 10px; width:400px'> 
+      <input type='text' id='location' style='width: 335px'></input>
+      <input type='button' id='locateButton' value='search'></input>
+    </div>
+</body>
+</html>

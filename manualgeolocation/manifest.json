@@ -1,0 +1,28 @@
+{
+  "name": "Manual Geolocation",
+  "version": "1.0.1",
+  "description": "Override HTML5 GeoLocation API and return an arbitrary location.",
+  "icons": { "16": "blue_dot_circle.png",
+        "32": "blue_dot_circle.png",
+        "48": "blue_dot_circle.png",
+        "128": "blue_dot_circle.png" },
+  "background_page": "background.html",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["fakegeo_content.js"],
+      "run_at": "document_start"
+    }
+  ],  
+  "permissions": [
+    "webNavigation",
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "browser_action": {
+    "default_title": "Manual Geolocation",
+    "default_icon": "blue_dot_circle.png",
+    "popup": "popup2.html"
+  }
+}
